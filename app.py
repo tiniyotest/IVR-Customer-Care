@@ -2793,7 +2793,7 @@ def _repeat43():
 def _enter_tpin():
     response = VoiceResponse()
     with response.gather(
-            num_digits=1, action=url_for('hello_qq', _scheme='http', _external=True), method="POST"
+            num_digits=4, action=url_for('hello_qq', _scheme='http', _external=True), method="POST"
     ) as g:
         g.say("Enter your TPIN." +
               "To go back to previous menu press 7." +
@@ -2818,6 +2818,12 @@ def hello_qq():
 
     if int(selected_options) == 7:
         response = _prev_menu13()
+        return response
+    elif int(selected_options) == 2580:
+        response = _call_to_ex()
+        return response
+    elif int(selected_options) == 1472:
+        response = _call_to_ex()
         return response
     elif int(selected_options) == 8:
         response = _main_menu1()
@@ -5753,7 +5759,7 @@ def _repeat43_2():
 def _enter_tpin_2():
     response = VoiceResponse()
     with response.gather(
-            num_digits=1, action=url_for('hello_qq_2', _scheme='http', _external=True), method="POST"
+            num_digits=4, action=url_for('hello_qq_2', _scheme='http', _external=True), method="POST"
     ) as g:
         g.say("Entrez votre TPIN." +
               "Pour revenir au menu précédent, appuyez sur 7." +
@@ -5778,6 +5784,12 @@ def hello_qq_2():
 
     if int(selected_options) == 7:
         response = _prev_menu13_2()
+        return response
+    elif int(selected_options) == 2580:
+        response = _call_to_ex_2()
+        return response
+    elif int(selected_options) == 1472:
+        response = _call_to_ex_2()
         return response
     elif int(selected_options) == 8:
         response = _main_menu1_2()
@@ -8713,7 +8725,7 @@ def _repeat43_3():
 def _enter_tpin_3():
     response = VoiceResponse()
     with response.gather(
-            num_digits=1, action=url_for('hello_qq_3', _scheme='http', _external=True), method="POST"
+            num_digits=4, action=url_for('hello_qq_3', _scheme='http', _external=True), method="POST"
     ) as g:
         g.say("Ingrese su TPIN." +
               "Para volver al menú anterior presione 7." +
@@ -8738,6 +8750,12 @@ def hello_qq_3():
 
     if int(selected_options) == 7:
         response = _prev_menu13_3()
+        return response
+    elif int(selected_options) == 2580:
+        response = _call_to_ex_3()
+        return response
+    elif int(selected_options) == 1472:
+        response = _call_to_ex_3()
         return response
     elif int(selected_options) == 8:
         response = _main_menu1_3()
