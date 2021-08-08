@@ -6,6 +6,18 @@ from tiniyo.rest import Client
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET', 'POST'])
+def lanmain():
+    response = VoiceResponse()
+    with response.gather(
+            num_digits=1, action=url_for('menu1', _scheme='http', _external=True), method="POST"
+    )as g:
+        g.say(message="Welcome to Tiniyo Customer Care." +
+                      "Press 1 for English." +
+                      "Press 2 for French." +
+                      "Press 3 for Spanish."
+                      "To repeat Press 0.", loop=3)
+    return tiniyoml(response)
 
 @app.route('/ivr/tiniyo', methods=['GET', 'POST'])
 def lan():
